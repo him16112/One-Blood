@@ -1,0 +1,69 @@
+/* Home.css */
+section {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    /* Add position relative to create a positioning context */
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.option {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1;
+    margin: 1rem;
+    transition: transform 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option:hover {
+    transform: translateY(-4px);
+}
+
+.option h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+span {
+    font-size: 16px;
+    color: #0077B6;
+    text-decoration: none;
+    margin: 10px 0;
+    transition: color 0.3s;
+    align-self: center;
+}
+
+.option span:hover {
+    color: #00557B;
+}
+
+.logout-button {
+    position: absolute;
+    /* Set the position to absolute */
+    top: 0;
+    /* Position at the top of the section */
+    right: 0;
+    /* Position at the right of the section */
+}
+
+span a {
+    text-decoration: none;
+}
