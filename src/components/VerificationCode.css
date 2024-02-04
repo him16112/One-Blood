@@ -1,0 +1,25 @@
+.main-otp {
+    display: flex;
+}
+
+.otp {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    width: 120px;
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

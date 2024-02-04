@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
   phoneNo: String,
   address: String,
   bloodGroup: String,
+  distance: Number,
 
   availability: [{
     date: Date,
@@ -16,7 +17,6 @@ const userSchema = new mongoose.Schema({
 
   requests: [{
     date: Date,
-    distance: Number,
   }]
 });
 

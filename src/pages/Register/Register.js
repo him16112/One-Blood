@@ -31,9 +31,10 @@ const Register = () => {
         });
     };
 
+
     const handleRegister = async (e) => {
         e.preventDefault();
-
+    
         try {
             const response = await fetch('http://localhost:8000/register', {
                 method: 'POST',
@@ -42,28 +43,29 @@ const Register = () => {
                 },
                 body: JSON.stringify(formData),
             });
-
-
+    
             if (response.ok) {
+                alert('Registration successful!'); // Display a success message to the user
+    
+                // Fetch the updated user list (if needed)
                 const usersResponse = await fetch('http://localhost:8000/getUsers');
                 const usersData = await usersResponse.json();
                 console.log('Users array after registration:', usersData);
-
+    
                 // Navigate to the login page
                 navigate('/');
             } else {
-                alert('User already existed');
-                const usersResponse = await fetch('http://localhost:8000/getUsers');
-                const usersData = await usersResponse.json();
-                console.log('Users array after registration:', usersData);
+                const errorData = await response.json();
+                alert(`Registration failed: ${errorData.message}`);
             }
         } catch (error) {
             console.error('Registration error:', error);
+            alert('Registration failed. Please try again later.');
         }
-
+    
         setFormData(initialFormData);
-        navigate('/home');
     };
+    
 
     return (
         <div className="login-container">
@@ -117,7 +119,7 @@ const Register = () => {
                         onChange={handleInputChange}
                     />
                     <br />
-                    <button type="submit">Register</button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </div>
