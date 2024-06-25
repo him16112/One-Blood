@@ -1,18 +1,18 @@
+import React, { createContext, useState } from "react";
 
-import React, { createContext, useContext, useState } from 'react';
 
-const UserContext = createContext();
+// Creating a Context
+export const UserContext = createContext();
 
-export const UserProvider = ({ children }) => {
-  const [userBloodGroup, setUserBloodGroup] = useState('');
+// Create a Provider component
+
+export const UserProvider = ({children}) => {
+  const [user, setUser] = useState("");
 
   return (
-    <UserContext.Provider value={{ userBloodGroup, setUserBloodGroup }}>
-      {children}
+    <UserContext.Provider value = {{user, setUser}}>
+     {children}
     </UserContext.Provider>
-  );
-};
+  )
+}
 
-export const useUser = () => {
-  return useContext(UserContext);
-};

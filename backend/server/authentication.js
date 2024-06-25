@@ -23,7 +23,7 @@ const apiKey = 'Your_api_key';
 
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: `http://localhost:3000`,
   credentials: true,
 }));
 
@@ -296,7 +296,7 @@ app.post('/postRequest', verifyToken, async (req, res) => {
     user.requests.push(schedule);
     await user.save();
 
-    // Fetch a list of all outgoing caller IDs
+    //Fetch a list of all outgoing caller IDs
     const outgoingCallerIds = await client.outgoingCallerIds.list();
 
     // Message to be sent to each caller ID
@@ -456,6 +456,12 @@ app.post('/login', async (req, res) => {
       maxAge: 900000,
     });
 
+    res.cookie('username', user.username, {
+      httpOnly: false, // This cookie will be accessible via JavaScript
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 900000,
+    });
+
     res.cookie('bloodGroup', userBloodGroup, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
@@ -468,7 +474,7 @@ app.post('/login', async (req, res) => {
       maxAge: 900000,
     });
 
-    res.json({ success: true, message: 'Login successful', bloodGroup: userBloodGroup , address: userAddress});
+    res.json({ success: true, message: 'Login successful'});
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ success: false, message: 'Internal Server Error' });

@@ -8,7 +8,6 @@ import ScheduleAvailability from './pages/ScheduleAvailability/ScheduleAvailabil
 import PostRequest from './pages/PostRequest/PostRequest.js';
 import ViewRequests from './pages/ViewRequests/ViewRequests.js';
 import ViewAvailableDonors from './pages/ViewAvailableDonors/ViewAvailableDonors.js';
-import VerificationCode from './components/VerificationCode.js';
 
 
 const App = () => {

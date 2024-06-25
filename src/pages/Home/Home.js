@@ -1,18 +1,25 @@
 // Home.js
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import Logout from '../../components/Logout.js';
+import { UserContext } from '../../components/UserContext.js';
+import Cookies from 'js-cookie';
 
 const Home = () => {
-  const user = {
-    username: 'JohnDoe', // Replace with the actual username
-  };
+  const {user, setUser} = useContext(UserContext);
+
+  useEffect(() => {
+    const username = Cookies.get('username'); // Read the username from cookies
+    if (username) {
+      setUser(username);
+    }
+  }, [setUser]);
 
   return (
     <div>
       <section>
-        <h2>Welcome {user.username}</h2>
+        <h2>Welcome {user} </h2>
         <Logout className="logout-button" />
       </section>
 

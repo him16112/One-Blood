@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
-// import { useUser } from '../../components/userContext';
 
 
 
@@ -9,8 +8,8 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(true);
-  // const { setUserBloodGroup } = useUser(); 
   const navigate = useNavigate();
+
 
 
 
@@ -46,14 +45,13 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
+        
         body: JSON.stringify({ username, password }),
         credentials: 'include',
       });
 
 
       if (response.ok) {
-        const data = await response.json(); // Parse the response JSON
-        
         navigate('/home');
       } else {
         alert('Invalid credentials');
