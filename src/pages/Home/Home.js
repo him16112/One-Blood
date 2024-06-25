@@ -1,13 +1,12 @@
 // Home.js
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import Logout from '../../components/Logout.js';
-import { UserContext } from '../../components/UserContext.js';
 import Cookies from 'js-cookie';
 
 const Home = () => {
-  const {user, setUser} = useContext(UserContext);
+  const [user, setUser] = useState("");
 
   useEffect(() => {
     const username = Cookies.get('username'); // Read the username from cookies
