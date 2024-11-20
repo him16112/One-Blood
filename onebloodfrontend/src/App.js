@@ -9,14 +9,10 @@ import PostRequest from './pages/PostRequest/PostRequest.js';
 import ViewRequests from './pages/ViewRequests/ViewRequests.js';
 import ViewAvailableDonors from './pages/ViewAvailableDonors/ViewAvailableDonors.js';
 
+
 const App = () => {
     return (
-        <Router 
-            future={{
-                v7_startTransition: true, // Enable startTransition behavior
-                v7_relativeSplatPath: true, // Enable relative splat path behavior
-            }}
-        >
+        <Router>
             <Routes>
                 <Route path="/" element={<Login/>} />
                 <Route path="/register" element={<Register />} />
