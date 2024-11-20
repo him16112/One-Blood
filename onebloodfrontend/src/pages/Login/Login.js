@@ -12,30 +12,6 @@ const Login = () => {
 
 
 
-
-  useEffect(() => {
-    const checkTokenValidity = async () => {
-      try {
-        const response = await fetch('https://one-blood.onrender.com/protected', {
-          method: 'GET',
-          credentials: 'include',
-        });
-
-        if (response.ok) {
-          navigate('/home');
-        }
-      } catch (error) {
-        console.error('Protected resource error:', error);
-      }
-
-      setLoading(false);
-    };
-
-    checkTokenValidity();
-  }, []);
-
-
-
   const handleLogin = async (e) => {
     e.preventDefault();
 
