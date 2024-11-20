@@ -411,28 +411,28 @@ app.post("/login", async (req, res) => {
       { expiresIn: "900s" }
     );
 
-    res.cookie("token", token, {
+    res.cookie('token', token, {
       httpOnly: true,     // Prevent JavaScript access
       secure: true,       // Only send over HTTPS
       sameSite: 'strict',
       maxAge: 900000,
     });
 
-    res.cookie("username", user.username, {
+    res.cookie('username', user.username, {
       httpOnly: true,     // Prevent JavaScript access
       secure: true,       // Only send over HTTPS
       sameSite: 'strict',
       maxAge: 900000,
     });
 
-    res.cookie("bloodGroup", userBloodGroup, {
+    res.cookie('bloodGroup', userBloodGroup, {
       httpOnly: true,
       secure: true,
       sameSite:'strict,
       maxAge: 900000,
     });
 
-    res.cookie("address", userAddress, {
+    res.cookie('address', userAddress, {
       httpOnly: true,
       secure: true,
       maxAge: 900000,
@@ -460,7 +460,7 @@ app.get("/protected", verifyToken, (req, res) => {
 // Verify JWT middleware
 
 function verifyToken(req, res, next) {
-  const token = req.cookies.token; // Read token from HttpOnly cookie
+  const token = req.cookies['token']; // Read token from HttpOnly cookie
 
   if (!token) {
     res.status(401).json({ message: "No token provided" });
