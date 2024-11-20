@@ -22,7 +22,7 @@ const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
 
 app.use(
   cors({
-    origin: "https://capable-gecko-36b819.netlify.app/",
+    origin: "https://capable-gecko-36b819.netlify.app",
     methods: "POST, GET, OPTIONS",
     allowedHeaders: ["Content-Type"],
     credentials: true, // Allow credentials
