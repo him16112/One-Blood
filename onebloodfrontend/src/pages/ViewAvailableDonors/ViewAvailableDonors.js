@@ -5,7 +5,7 @@ const ViewAvailableDonors = () => {
   const [usersWithMatchingRequests, setUsersWithMatchingRequests] = useState([]);
 
   useEffect(() => {
-    fetch('https://one-blood.onrender.com/availableDonors', {
+    fetch('https://one-blood-backend.onrender.com/availableDonors', {
       method: 'GET',
       credentials: 'include',
     })
