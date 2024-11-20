@@ -428,13 +428,14 @@ app.post("/login", async (req, res) => {
     res.cookie('bloodGroup', userBloodGroup, {
       httpOnly: true,
       secure: true,
-      sameSite:'strict,
+      sameSite:'strict',
       maxAge: 900000,
     });
 
     res.cookie('address', userAddress, {
       httpOnly: true,
       secure: true,
+      sameSite:'strict',
       maxAge: 900000,
     });
 
