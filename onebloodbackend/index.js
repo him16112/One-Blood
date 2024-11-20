@@ -22,7 +22,7 @@ const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
 
 app.use(
   cors({
-    origin: "https://one-blood-frontend.onrender.com",
+    origin: "http://localhost:3000",
     methods: "POST, GET, OPTIONS",
     allowedHeaders: ["Content-Type"],
     credentials: true, // Allow credentials
