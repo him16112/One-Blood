@@ -24,7 +24,7 @@ const PostRequest = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://one-blood-backend.onrender.com', {
+            const response = await fetch('https://one-blood-backend.onrender.com/postRequest', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
