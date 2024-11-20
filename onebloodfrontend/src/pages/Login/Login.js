@@ -13,7 +13,7 @@ const Login = () => {
     useEffect(() => {
     const checkTokenValidity = async () => {
       try {
-        const response = await fetch('https://one-blood.onrender.com/protected', {
+        const response = await fetch('https://one-blood-backend.onrender.com/protected', {
           method: 'GET',
           credentials: 'include',
         });
@@ -37,7 +37,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://one-blood.onrender.com/login', {
+      const response = await fetch('https://one-blood-backend.onrender.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
