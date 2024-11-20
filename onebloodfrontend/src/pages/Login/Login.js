@@ -16,7 +16,7 @@ const Login = () => {
   useEffect(() => {
     const checkTokenValidity = async () => {
       try {
-        const response = await fetch('https://one-blood.onrender.com/login', {
+        const response = await fetch('https://one-blood.onrender.com/protected', {
           method: 'GET',
           credentials: 'include',
         });
