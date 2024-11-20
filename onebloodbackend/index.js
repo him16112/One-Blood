@@ -412,20 +412,23 @@ app.post("/login", async (req, res) => {
     );
 
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
+      httpOnly: true,     // Prevent JavaScript access
+      secure: true,       // Only send over HTTPS
+      sameSite: 'strict',
       maxAge: 900000,
     });
 
     res.cookie("username", user.username, {
-      httpOnly: false, // This cookie will be accessible via JavaScript
-      secure: true,
+      httpOnly: true,     // Prevent JavaScript access
+      secure: true,       // Only send over HTTPS
+      sameSite: 'strict',
       maxAge: 900000,
     });
 
     res.cookie("bloodGroup", userBloodGroup, {
       httpOnly: true,
       secure: true,
+      sameSite:'strict,
       maxAge: 900000,
     });
 
