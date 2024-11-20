@@ -36,7 +36,7 @@ const Register = () => {
         e.preventDefault();
     
         try {
-            const response = await fetch('https://one-blood.onrender.com/register', {
+            const response = await fetch('https://one-blood-backend.onrender.com/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
